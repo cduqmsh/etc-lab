@@ -1,0 +1,2 @@
+#! /bin/sh
+nohup /sw/java/java21/bin/java -server -Xms4096m -Xmx4096m -Djava.awt.headless=true -Djsch.server_host_key=ssh-rsa,ssh-dss,ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,rsa-sha2-512,rsa-sha2-256 -Djsch.client_pubkey=ssh-rsa,rsa-sha2-512,rsa-sha2-256 -DJENKINS_HOME=/data/jenkins -jar /sw/jenkins/jenkins.war --logfile=/logs/jenkins/jenkins.log --httpPort=8080 --debug=5 --accessLoggerClassName=winstone.accesslog.SimpleAccessLogger --simpleAccessLogger.format=combined > /logs/jenkins/nohup.out 2>&1 &
